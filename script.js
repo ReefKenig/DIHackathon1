@@ -33,3 +33,11 @@ class Card {
     return cardDiv;
   }
 }
+
+function newDeck() {
+  return suits.flatMap((suit) => {
+    return values.map((value) => {
+      return new Card(suit, value);
+    });
+  });
+}
