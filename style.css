@@ -1,5 +1,42 @@
 body {
     margin: 0;
     padding: 0;
-    
-}
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  
+  .deck {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: .5rem;
+    color: white;
+    user-select: none;
+  }
+  
+  .cpu-deck {
+    background-color: red;
+  }
+  
+  .player-deck {
+    background-color: blue;
+  }
+  .card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+  }
