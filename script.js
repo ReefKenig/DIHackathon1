@@ -42,12 +42,8 @@ function newDeck() {
   });
 }
 class Deck {
-  constructor(cards = freshDeck()) {
+  constructor(cards = newDeck()) {
     this.cards = cards;
-  }
-
-  get numberOfCards() {
-    return this.cards.length;
   }
 
   shuffle() {
