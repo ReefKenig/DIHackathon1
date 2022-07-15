@@ -14,6 +14,21 @@ const values = [
   "Q",
   "K",
 ];
+const cardValueMap = {
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  10: 10,
+  J: 11,
+  Q: 12,
+  K: 13,
+  A: 14,
+};
 
 class Card {
   constructor(suit, value) {
@@ -27,20 +42,14 @@ class Card {
 
   getHTML() {
     const cardDiv = document.createElement("div");
-    cardDiv.innerText = this.suit;
+    cardDiv.innerText = this.suit + this.value;
+    cardDiv.style.color = this.color;
     cardDiv.classList.add("card", this.color);
     cardDiv.dataset.value = `${this.value} ${this.suit}`;
     return cardDiv;
   }
 }
 
-function newDeck() {
-  return suits.flatMap((suit) => {
-    return values.map((value) => {
-      return new Card(suit, value);
-    });
-  });
-}
 class Deck {
   constructor(cards = newDeck()) {
     this.cards = cards;
@@ -55,3 +64,71 @@ class Deck {
     }
   }
 }
+
+function newDeck() {
+  return suits.flatMap((suit) => {
+    return values.map((value) => {
+      return new Card(suit, value);
+    });
+  });
+}
+
+function initGame() {
+  playerPointsDiv.innerHTML = 0;
+  cpuPointsDiv.innerHTML = 0;
+  let playerDeck = new Deck();
+  playerDeck.shuffle();
+  let cpuDeck = new Deck();
+  cpuDeck.shuffle();
+  return [playerDeck, cpuDeck];
+}
+
+function round(playerDeck, cpuDeck) {
+  playerDeck;
+  let playerDraw = flipCards(playerDeck);
+  let cpuDraw = flipCards(cpuDeck);
+  playerSide.appendChild(playerDraw.getHTML());
+  cpuSide.appendChild(cpuDraw.getHTML());
+
+  if (isRoundWinner(playerDraw, cpuDraw) == 1) {
+    playerPointsDiv.innerHTML++;
+  } else if (isRoundWinner(playerDraw, cpuDraw) == 0) {
+    cpuPointsDiv.innerHTML++;
+  }
+}
+
+function flipCards(deck) {
+  return deck.cards[Math.floor(Math.random() * deck.cards.length)];
+}
+
+function isRoundWinner(playerCard, cpuCard) {
+  if (cardValueMap[playerCard.value] > cardValueMap[cpuCard.value]) return 1;
+  else if (cardValueMap[playerCard.value] < cardValueMap[cpuCard.value])
+    return 0;
+  else return;
+}
+
+function isGameOver(playerPoints, cpuPoints) {
+  if (playerPoints == 10) {
+    return 1;
+  } else if (cpuPoints == 10) {
+    return 0;
+  } else {
+    return;
+  }
+}
+
+const cpuSide = document.querySelector(".cpuDeck");
+const playerSide = document.querySelector(".playerDeck");
+const cpuPointsDiv = document.querySelector(".cpuPoints");
+const playerPointsDiv = document.querySelector(".playerPoints");
+const drawButton = document.querySelector(".drawButton");
+const decks = initGame();
+const playerDeck = decks[0];
+const cpuDeck = decks[1];
+let gameOver;
+drawButton.addEventListener("click", function () {
+  playerSide.innerHTML = "";
+  cpuSide.innerHTML = "";
+  round(playerDeck, cpuDeck);
+});

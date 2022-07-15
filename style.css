@@ -4,28 +4,28 @@ body {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  height:100vh;
-  align-items: center;    
-
+  height: 100vh;
+  align-items: center;
 }
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   justify-content: center;
   padding-top: 1rem;
   height: 100%;
-  width:100%;
+  width: 100%;
   align-items: center;
-  
 }
+
 .deck {
   height: 500px;
   width: 650px;
   border: 1px solid black;
   align-items: center;
   font-size: 3rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: white;
   user-select: none;
   flex-direction: column;
@@ -33,49 +33,51 @@ body {
   margin-bottom: 20px;
 }
 
-.cpuDeck  {
+.cpuDeck {
   background-color: red;
-  
-  
 }
 
 .playerDeck {
   background-color: blue;
 }
+
 .card {
   position: relative;
   height: 100%;
   width: 100%;
   border: 1px solid black;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 4rem;
 }
-.points{
+
+.points {
   width: 50px;
-  height:50px;
+  height: 50px;
   border: 3px solid green;
   margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.drawButton{
-  width:200px;
-  height:100px;
+
+.drawButton {
+  width: 200px;
+  height: 100px;
   border: 3px solid red;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.restartButton{
-  width:200px;
-  height:100px;
+
+.restartButton {
+  width: 200px;
+  height: 100px;
   border: 3px solid red;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
