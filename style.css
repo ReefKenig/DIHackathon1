@@ -1,49 +1,73 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  height:100vh;
+  align-items: center;    
 
-  }
-  .container{
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    justify-content: center;
-    padding-top: 1rem;
-    height: 60vh;
-    width:60vw;
-    
-  }
-  .deck {
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    border-radius: .5rem;
-    color: white;
-    user-select: none;
-  }
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: center;
+  padding-top: 1rem;
+  height: 100%;
+  width:100%;
+  align-items: center;
   
-  .cpu-deck {
-    background-color: red;
-  }
+}
+.deck {
+  height: 500px;
+  width: 650px;
+  border: 1px solid black;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: .5rem;
+  color: white;
+  user-select: none;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+.cpuDeck  {
+  background-color: red;
   
-  .player-deck {
-    background-color: blue;
-  }
-  .card {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: .5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4rem;
-  }
+  
+}
+
+.playerDeck {
+  background-color: blue;
+}
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+.points{
+  width: 50px;
+  height:50px;
+  border: 3px solid green;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.drawButton{
+  width:200px;
+  height:100px;
+  border: 3px solid red;
+  margin-bottom:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
