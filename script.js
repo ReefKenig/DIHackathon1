@@ -119,6 +119,11 @@ function isWinner(playerPoints, cpuPoints) {
   return;
 }
 
+function sleep(milliseconds) {
+  const start = Date.now();
+  while (Date.now() - start < milliseconds);
+}
+
 const cpuSide = document.querySelector(".cpuDeck");
 const playerSide = document.querySelector(".playerDeck");
 const cpuPointsDiv = document.querySelector(".cpuPoints");
@@ -127,13 +132,13 @@ const drawButton = document.querySelector(".drawButton");
 const decks = initGame();
 const playerDeck = decks[0];
 const cpuDeck = decks[1];
+const winTheme = new Audio("./sounds/victory sound.wav");
 let gameOver;
-drawButton.addEventListener("click", function () {
+drawButton.addEventListener("click", function (event) {
   if (gameOver != undefined) {
     initGame();
     gameOver = undefined;
-    drawButton.innerHTML = "DRAW ANOTHER CARD!";
-
+    drawButton.innerHTML = "DRAW A CARD";
     return;
   }
   playerSide.innerHTML = "";
@@ -143,6 +148,7 @@ drawButton.addEventListener("click", function () {
   if (gameOver != undefined) {
     if (gameOver == 1) {
       drawButton.innerHTML = "Winner!";
+      winTheme.play();
     } else if (gameOver == 0) {
       drawButton.innerHTML = "Loser...";
     }
