@@ -76,6 +76,8 @@ function newDeck() {
 function initGame() {
   playerPointsDiv.innerHTML = 0;
   cpuPointsDiv.innerHTML = 0;
+  playerSide.innerHTML = "";
+  cpuSide.innerHTML = "";
   let playerDeck = new Deck();
   playerDeck.shuffle();
   let cpuDeck = new Deck();
@@ -108,14 +110,13 @@ function isRoundWinner(playerCard, cpuCard) {
   else return;
 }
 
-function isGameOver(playerPoints, cpuPoints) {
+function isWinner(playerPoints, cpuPoints) {
   if (playerPoints == 10) {
     return 1;
   } else if (cpuPoints == 10) {
     return 0;
-  } else {
-    return;
   }
+  return;
 }
 
 const cpuSide = document.querySelector(".cpuDeck");
@@ -128,7 +129,25 @@ const playerDeck = decks[0];
 const cpuDeck = decks[1];
 let gameOver;
 drawButton.addEventListener("click", function () {
+  if (gameOver != undefined) {
+    initGame();
+    gameOver = undefined;
+    drawButton.innerHTML = "DRAW ANOTHER CARD!";
+
+    return;
+  }
   playerSide.innerHTML = "";
   cpuSide.innerHTML = "";
   round(playerDeck, cpuDeck);
+  gameOver = isWinner(playerPointsDiv.innerHTML, cpuPointsDiv.innerHTML);
+  if (gameOver != undefined) {
+    if (gameOver == 1) {
+      drawButton.innerHTML = "Winner!";
+    } else if (gameOver == 0) {
+      drawButton.innerHTML = "Loser...";
+    }
+    setTimeout(() => {
+      drawButton.innerHTML = "Start a new Game?";
+    }, 3000);
+  }
 });
