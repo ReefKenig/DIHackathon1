@@ -30,7 +30,7 @@ body {
 
 .deck {
   height: 500px;
-  width: 500px;
+  width: 350px;
   box-shadow: 2px;
   align-items: center;
   font-size: 3rem;
@@ -40,18 +40,9 @@ body {
   flex-direction: column;
   align-content: center;
   margin-bottom: 20px;
+  background-color: transparent;
 }
 
-.cpuDeck  {
-  background-color: transparent;
-  border: 3px solid red;
-  
-}
-
-.playerDeck {
-  background-color: transparent;
-  border: 3px solid blue;
-}
 
 .card {
   position: relative;
@@ -69,17 +60,18 @@ body {
   width: 50px;
   height: 50px;
   border: 3px solid green;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 2px 2px 5px black;
 }
 .drawButton{
   width:200px;
   height:100px;
-  /* border: 3px solid yellow; */
   box-shadow: inner 0 0 5px #888;
   margin-bottom:20px;
+  margin-top:5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,8 +94,23 @@ footer{
   color:black;
 }
 
+img{
+  width:30vw;
+}
 @media only screen and (max-width: 600px) {
   .deck{
-    width:80vw;
+    width:60vw;
+    height:40vh;
+  }
+ 
+}
+@media only screen and (max-height: 480px) {
+  .card{
+    font-size: 10vh;
+    
+  }
+  .deck{
+    width:50vw;
+    height:40vh;
   }
 }
