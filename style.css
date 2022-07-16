@@ -15,7 +15,6 @@ body {
   color:white;
   font-weight: bold;
   cursor: url("./images/Temp-32x32.jpg"), auto;
-
 }
 
 .container {
@@ -43,7 +42,6 @@ body {
   background-color: transparent;
 }
 
-
 .card {
   position: relative;
   height: 100%;
@@ -66,7 +64,8 @@ body {
   justify-content: center;
   text-shadow: 2px 2px 5px black;
 }
-.drawButton{
+
+.drawButton {
   width:200px;
   height:100px;
   box-shadow: inner 0 0 5px #888;
@@ -75,7 +74,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .restartButton {
@@ -88,27 +86,28 @@ body {
   justify-content: center;
 }
 
-footer{
+footer {
   font-family: 'Courier New', Courier, monospace;
   font-size: small;
   color:black;
 }
 
-img{
+img {
   width:30vw;
 }
+
 @media only screen and (max-width: 600px) {
-  .deck{
+  .deck {
     width:60vw;
     height:40vh;
   }
- 
 }
+
 @media only screen and (max-height: 480px) {
   .card{
-    font-size: 10vh;
-    
+    font-size: 10vh; 
   }
+  
   .deck{
     width:50vw;
     height:40vh;
