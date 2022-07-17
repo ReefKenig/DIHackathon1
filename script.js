@@ -133,7 +133,7 @@ drawButton.addEventListener("click", function () {
   if (gameOver != undefined) {
     initGame();
     gameOver = undefined;
-    drawButton.innerHTML = "DRAW ANOTHER CARD!";
+    drawButton.innerHTML = "DRAW A CARD";
     return;
   }
   playerSide.innerHTML = "";
