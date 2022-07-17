@@ -4,15 +4,15 @@ body {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  height:100vh;
+  height: 100vh;
   align-items: center;
   background-image: url(./images/background2.jpg);
   background-repeat: no-repeat;
-  background-size:cover;  
+  background-size: cover;
   background-position: 50% 50%;
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
   font-size: large;
-  color:white;
+  color: white;
   font-weight: bold;
   cursor: url("./images/Temp-32x32.jpg"), auto;
 }
@@ -66,14 +66,15 @@ body {
 }
 
 .drawButton {
-  width:200px;
-  height:100px;
+  width: 200px;
+  height: 100px;
   box-shadow: inner 0 0 5px #888;
-  margin-bottom:20px;
-  margin-top:5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.5s ease;
 }
 
 .restartButton {
@@ -87,29 +88,39 @@ body {
 }
 
 footer {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: small;
-  color:black;
+  color: black;
 }
 
 img {
-  width:30vw;
+  width: 30vw;
 }
 
 @media only screen and (max-width: 600px) {
   .deck {
-    width:60vw;
-    height:40vh;
+    width: 60vw;
+    height: 40vh;
   }
 }
 
 @media only screen and (max-height: 480px) {
-  .card{
-    font-size: 10vh; 
+  .card {
+    font-size: 10vh;
   }
-  
-  .deck{
-    width:50vw;
-    height:40vh;
+
+  .deck {
+    width: 50vw;
+    height: 40vh;
+  }
+}
+
+.animateSize {
+  animation: incDecSize 1s 3;
+}
+
+@keyframes incDecSize {
+  50% {
+    font-size: 25px;
   }
 }
