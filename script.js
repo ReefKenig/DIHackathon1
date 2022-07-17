@@ -119,6 +119,13 @@ function isWinner(playerPoints, cpuPoints) {
   return;
 }
 
+function animateTextSize(element) {
+  element.classList.add("animateSize");
+  setTimeout(() => {
+    element.classList.remove("animateSize");
+  }, 3000);
+}
+
 const cpuSide = document.querySelector(".cpuDeck");
 const playerSide = document.querySelector(".playerDeck");
 const cpuPointsDiv = document.querySelector(".cpuPoints");
@@ -144,9 +151,11 @@ drawButton.addEventListener("click", function () {
     if (gameOver == 1) {
       drawButton.innerHTML = "Winner!";
       winTheme.play();
+      animateTextSize(drawButton);
       drawButton.disabled = true;
     } else if (gameOver == 0) {
       drawButton.innerHTML = "Loser...";
+      animateTextSize(drawButton);
       drawButton.disabled = true;
     }
     setTimeout(() => {
