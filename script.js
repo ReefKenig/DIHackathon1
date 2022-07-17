@@ -127,13 +127,13 @@ const drawButton = document.querySelector(".drawButton");
 const decks = initGame();
 const playerDeck = decks[0];
 const cpuDeck = decks[1];
+const winTheme = new Audio("./sounds/victory sound.wav");
 let gameOver;
 drawButton.addEventListener("click", function () {
   if (gameOver != undefined) {
     initGame();
     gameOver = undefined;
     drawButton.innerHTML = "DRAW ANOTHER CARD!";
-
     return;
   }
   playerSide.innerHTML = "";
@@ -143,11 +143,15 @@ drawButton.addEventListener("click", function () {
   if (gameOver != undefined) {
     if (gameOver == 1) {
       drawButton.innerHTML = "Winner!";
+      winTheme.play();
+      drawButton.disabled = true;
     } else if (gameOver == 0) {
       drawButton.innerHTML = "Loser...";
+      drawButton.disabled = true;
     }
     setTimeout(() => {
       drawButton.innerHTML = "Start a new Game?";
+      drawButton.disabled = false;
     }, 3000);
   }
 });
