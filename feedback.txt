@@ -1,0 +1,34 @@
+HTML:
+    Things that were done well:
+    - Mostly short and concise. Not much to comment about.
+
+    Things to improve:
+    - restartButton doesn't ever seem to be used.
+    - Not a big deal in this case, but in the future, be careful sticking everything into one big ".container".  Best to stick to header/main/footer structure for most sites.
+
+
+CSS:
+    Things that were done well:
+    - Responsivity really well done.
+    - Can tell that the people who wrote this code really understood the CSS they were writing. 😁
+
+    Things to improve:
+    - Not sure if it was necessary to bring in bootstrap, since you're doing a lot of overriding for the bootstrap classes you brought in anyway like "card" or "container".  Might as well make those classes from scratch.  This is a very small thing though.  Maybe something to think about.
+
+
+JS:
+    Things that were done well:
+    - You guys used CONST.  Thank G-d!!  You make me so proud. 😂
+    - You guys used CLASSES, and you used them well!  This made your code super organized. Well done!
+    - Then you have your utility functions.  Modularity, reusability, cleanliness.  Chef's kiss lol
+    - Even using getters in the Card class btw.  Pshhh, very fancy 😉
+
+    Things to improve:
+    - Utility function "newDeck" should've just been a static method in the Deck class.  It is something to do with a card deck that isn't unique to a particular Deck.  Therefore, perfect use case for static method.
+    - Maybe you could've made getHTML method in Card class into "get html" tho? 🙃.  There are a few use cases where using a getter instead of a function is a good idea, but they all essentially boil down to one common denominator - computed properties.  When we want some computed output that doesn't depend on any input, it's a good idea to think that maybe we have a good use case for a getter instead of a method.
+    - Maybe a lot of your utility functions could have been put into a single Game class?
+    - Your code is very clean already, but maybe adding a little more spacing here and there + some comments just to separate the sections would be a good idea.
+
+
+OVERALL:
+    You guys are freakin rockstars.  Amazing job.  Keep improving, and you'll both go really far. 😄
